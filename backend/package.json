@@ -1,0 +1,31 @@
+{
+  "name": "job-queue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/api/server.js",
+    "dev":   "nodemon src/api/server.js",
+    "test":  "jest --testPathPattern=tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.22.0",
+    "redis": "^6.0.1",
+    "uuid": "^8.3.2",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "autocannon": "^8.0.0",
+    "jest": "^30.4.2",
+    "nodemon": "^3.1.14"
+  },
+  "jest": {
+    "testTimeout": 15000
+  }
+}
