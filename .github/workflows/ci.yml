@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: jobqueue
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Wait for services
+        run: sleep 5
+
+      - name: Run tests
+        working-directory: ./backend
+        run: npm test
+        env:
+          REDIS_URL: redis://localhost:6379
+          PG_HOST: localhost
+          PG_PORT: 5432
+          PG_USER: admin
+          PG_PASSWORD: password
+          PG_DB: jobqueue
+
+      - name: Run benchmark check
+        working-directory: ./backend
+        run: |
+          npm install -g autocannon
+          node src/api/server.js &
+          sleep 3
+          autocannon -c 10 -d 5 -m POST -H "Content-Type: application/json" -b '{"type":"email","payload":{},"priority":2}' http://localhost:3000/api/jobs
+        continue-on-error: true
