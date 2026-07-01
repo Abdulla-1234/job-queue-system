@@ -1,16 +1,17 @@
-[![CI](https://github.com/Abdulla-1234/job-queue/actions/workflows/ci.yml/badge.svg)](https://github.com/Abdulla-1234/job-queue/actions/workflows/ci.yml)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
-[![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)](https://redis.io)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?logo=postgresql&logoColor=white)](https://postgresql.org)
-[![Tests](https://img.shields.io/badge/tests-15%20passing-success)](#run-tests)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
 # Job Queue System
 
 A distributed job queue built from scratch — priority scheduling, atomic worker dequeue, exponential backoff retries, a dead-letter queue, and a real-time WebSocket dashboard. Built to actually understand how systems like BullMQ, Celery, and SQS work under the hood, not just use them.
 
 ---
 <img width="1181" height="786" alt="image" src="https://github.com/user-attachments/assets/594a5214-a1e6-4600-9603-092de9787540" />
+
+
+[![CI](https://github.com/Abdulla-1234/job-queue/actions/workflows/ci.yml/badge.svg)](https://github.com/Abdulla-1234/job-queue/actions/workflows/ci.yml)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)](https://redis.io)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?logo=postgresql&logoColor=white)](https://postgresql.org)
+[![Tests](https://img.shields.io/badge/tests-15%20passing-success)](#run-tests)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 ## Architecture
