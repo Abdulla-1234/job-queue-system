@@ -10,7 +10,9 @@
 A distributed job queue built from scratch — priority scheduling, atomic worker dequeue, exponential backoff retries, a dead-letter queue, and a real-time WebSocket dashboard. Built to actually understand how systems like BullMQ, Celery, and SQS work under the hood, not just use them.
 
 ---
+<img width="1181" height="786" alt="image" src="https://github.com/user-attachments/assets/594a5214-a1e6-4600-9603-092de9787540" />
 
+---
 ## Architecture
 
 ```
