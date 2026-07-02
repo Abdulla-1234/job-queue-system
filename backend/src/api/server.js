@@ -10,9 +10,13 @@ const { count }     = require('../queue/DLQ');
 
 const app    = express();
 const server = createServer(app);
-const wss    = new WebSocketServer({ server });
+const wss    = new WebSocketServer({ 
+  server,
+  perMessageDeflate: false
+});
 
 app.use(express.json());
+app.set('trust proxy', 1);
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../../../frontend/dashboard')));
 app.use('/api', routes);

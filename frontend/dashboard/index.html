@@ -26,13 +26,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;min-height:100vh}
-
-/* NAV */
-nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:12px 24px;background:var(--surface);
-  border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;
-}
+nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
 .nav-left{display:flex;align-items:center;gap:16px}
 .logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;letter-spacing:-0.02em}
 .logo-icon{width:28px;height:28px;border-radius:8px;background:var(--purple);display:grid;place-items:center;font-size:14px;font-weight:800;color:#fff;flex:none}
@@ -45,11 +39,7 @@ nav{
 .pulse{width:7px;height:7px;border-radius:50%;background:currentColor}
 .pulse.anim{animation:blink 1.4s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
-/* LAYOUT */
 main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-direction:column;gap:20px}
-
-/* PIPELINE */
 .pipeline-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px}
 .section-title{font-size:11px;font-family:var(--font);color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
 .pipeline{display:flex;align-items:center;gap:0;overflow-x:auto}
@@ -66,8 +56,6 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .out-done{background:rgba(31,170,126,.12);color:var(--green)}
 .out-retry{background:rgba(240,161,50,.12);color:var(--amber)}
 .out-dead{background:rgba(224,82,73,.12);color:var(--red)}
-
-/* METRICS */
 .metrics-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 @media(max-width:900px){.metrics-row{grid-template-columns:repeat(3,1fr)}}
 .metric-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
@@ -77,12 +65,8 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .metric-val{font-size:28px;font-weight:700;font-family:var(--font);letter-spacing:-0.03em;font-variant-numeric:tabular-nums;line-height:1}
 .metric-val.red{color:var(--red)}
 .metric-sub{font-size:11px;color:var(--muted);margin-top:5px}
-
-/* TWO COL */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:800px){.two-col{grid-template-columns:1fr}}
-
-/* WORKER POOL */
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
 .workers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:4px}
 .worker-card{border:1px solid var(--border2);border-radius:8px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px}
@@ -92,24 +76,9 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .worker-status{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:999px}
 .ws-idle{background:var(--surface);color:var(--muted)}
 .ws-busy{background:rgba(31,170,126,.15);color:var(--teal)}
-
-/* CHART */
 .chart-wrap{position:relative;height:200px;margin-top:8px}
 .chart-zoom-btn{position:absolute;top:0;right:0;background:var(--surface);border:1px solid var(--border2);color:var(--muted);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer;z-index:5;transition:all .15s;font-family:var(--font)}
 .chart-zoom-btn:hover{border-color:var(--purple);color:var(--purple)}
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;align-items:center;justify-content:center}
-.modal-overlay.open{display:flex}
-.modal-box{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:24px;width:90vw;max-width:1100px;position:relative}
-.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.modal-title{font-size:13px;font-family:var(--font);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.modal-close{background:var(--surface);border:1px solid var(--border2);color:var(--muted);border-radius:6px;padding:5px 12px;cursor:pointer;font-size:12px;font-family:var(--font)}
-.modal-close:hover{color:var(--text)}
-.modal-chart-wrap{position:relative;height:420px}
-.time-btns{display:flex;gap:6px}
-.time-btn{background:var(--surface);border:1px solid var(--border2);color:var(--muted);border-radius:5px;padding:3px 10px;font-size:11px;font-family:var(--font);cursor:pointer;transition:all .15s}
-.time-btn.active{border-color:var(--purple);color:var(--purple)}
-
-/* ACTIVITY LOG */
 .log-box{height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:1px;margin-top:8px}
 .log-box::-webkit-scrollbar{width:4px}
 .log-box::-webkit-scrollbar-track{background:transparent}
@@ -125,8 +94,6 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .lb-enqueued{background:rgba(139,131,232,.15);color:var(--purple)}
 .log-msg{color:var(--text);font-family:var(--font);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .log-empty{color:var(--muted);font-size:12px;text-align:center;padding:40px 0;font-family:var(--font)}
-
-/* DLQ TABLE */
 .dlq-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px}
 .dlq-table th{text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:6px 10px;border-bottom:1px solid var(--border)}
 .dlq-table td{padding:8px 10px;border-bottom:1px solid var(--border);font-family:var(--font);font-size:11px;color:var(--text)}
@@ -136,13 +103,10 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .dlq-id:hover{text-decoration:underline}
 .reason-cell{color:var(--muted) !important;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dlq-empty{color:var(--muted);font-size:12px;text-align:center;padding:30px 0;font-family:var(--font)}
-
-/* SUBMIT */
 .submit-form{display:flex;flex-direction:column;gap:12px;margin-top:4px}
 .field{display:flex;flex-direction:column;gap:5px}
 .field label{font-size:11px;color:var(--muted);font-family:var(--font)}
-.field input,
-.field select{background:var(--surface);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;color:var(--text);font-family:var(--font);font-size:12px;outline:none;width:100%}
+.field input,.field select{background:var(--surface);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;color:var(--text);font-family:var(--font);font-size:12px;outline:none;width:100%}
 .field input:focus,.field select:focus{border-color:var(--purple)}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .btn{padding:9px 16px;border-radius:7px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;width:100%}
@@ -151,15 +115,8 @@ main{max-width:1300px;margin:0 auto;padding:20px 24px;display:flex;flex-directio
 .batch-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:2px}
 .btn-batch{background:var(--surface);border:1px solid var(--border2);color:var(--muted);font-size:11px;font-family:var(--font);padding:6px;border-radius:6px;cursor:pointer;transition:all .15s}
 .btn-batch:hover{border-color:var(--purple);color:var(--purple)}
-
-/* SUCCESS RATE */
-.rate-bar-wrap{margin-top:10px}
-.rate-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:6px}
-.rate-val{color:var(--green);font-weight:700;font-family:var(--font)}
 .rate-bar{height:6px;background:var(--surface);border-radius:3px;overflow:hidden}
 .rate-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--purple));border-radius:3px;transition:width .5s}
-
-/* FOOTER */
 footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 24px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted);font-family:var(--font);position:sticky;bottom:0}
 </style>
 </head>
@@ -180,7 +137,6 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
 </nav>
 
 <main>
-  <!-- PIPELINE -->
   <div class="pipeline-card">
     <div class="section-title">Task Flow Pipeline</div>
     <div class="pipeline">
@@ -217,7 +173,6 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
     </div>
   </div>
 
-  <!-- METRICS -->
   <div class="metrics-row">
     <div class="metric-card">
       <div class="metric-label"><span class="metric-dot" style="background:var(--teal)"></span>Processed</div>
@@ -251,23 +206,13 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
     </div>
   </div>
 
-  <!-- CHART + WORKERS -->
   <div class="two-col">
     <div class="card" style="position:relative">
       <div class="section-title" style="display:flex;justify-content:space-between;align-items:center">
         Queue depth over time
-        <button class="chart-zoom-btn" onclick="openSection('chartSection','depthChart',chart,'Queue Depth Over Time')">⛶</button>
+        <button class="chart-zoom-btn" onclick="openSection('Queue Depth Over Time')">⛶</button>
       </div>
       <div class="chart-wrap"><canvas id="depthChart"></canvas></div>
-    </div>
-
-    <!-- Fullscreen overlay -->
-    <div id="fsOverlay" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:200;flex-direction:column">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--border)">
-        <span id="fsTitle" style="font-size:13px;font-family:var(--font);color:var(--muted);text-transform:uppercase;letter-spacing:.08em"></span>
-        <button onclick="closeFullscreen()" style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border2);color:var(--text);border-radius:7px;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--font)">← Back</button>
-      </div>
-      <div id="fsContent" style="flex:1;padding:24px;overflow:auto;display:flex;flex-direction:column"></div>
     </div>
     <div class="card">
       <div class="section-title">Worker pool</div>
@@ -275,7 +220,6 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
     </div>
   </div>
 
-  <!-- SUBMIT + LOG -->
   <div class="two-col">
     <div class="card">
       <div class="section-title">Submit job</div>
@@ -323,7 +267,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
         <span>Activity log</span>
         <div style="display:flex;gap:8px;align-items:center">
           <span id="log-count" style="font-family:var(--font);color:var(--muted)">0 events</span>
-          <button class="chart-zoom-btn" onclick="openLogFullscreen()">⛶</button>
+          <button class="chart-zoom-btn" style="position:static" onclick="openLogFullscreen()">⛶</button>
         </div>
       </div>
       <div class="log-box" id="logBox">
@@ -332,7 +276,6 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
     </div>
   </div>
 
-  <!-- DLQ -->
   <div class="card">
     <div class="section-title" style="display:flex;justify-content:space-between">
       Failed tasks — dead letter queue
@@ -341,12 +284,8 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
     <table class="dlq-table">
       <thead>
         <tr>
-          <th>Job ID</th>
-          <th>Type</th>
-          <th>Attempts</th>
-          <th>Reason</th>
-          <th>Failed at</th>
-          <th>Action</th>
+          <th>Job ID</th><th>Type</th><th>Attempts</th>
+          <th>Reason</th><th>Failed at</th><th>Action</th>
         </tr>
       </thead>
       <tbody id="dlqBody">
@@ -356,8 +295,17 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
   </div>
 </main>
 
+<!-- Fullscreen overlay -->
+<div id="fsOverlay" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:200;flex-direction:column">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--border)">
+    <span id="fsTitle" style="font-size:13px;font-family:var(--font);color:var(--muted);text-transform:uppercase;letter-spacing:.08em"></span>
+    <button onclick="closeFullscreen()" style="display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border2);color:var(--text);border-radius:7px;padding:7px 16px;cursor:pointer;font-size:13px;font-family:var(--font)">← Back</button>
+  </div>
+  <div id="fsContent" style="flex:1;padding:24px;overflow:auto;display:flex;flex-direction:column"></div>
+</div>
+
 <footer>
-  <span id="wsUrl">ws://localhost:3000</span>
+  <span id="wsUrl">—</span>
   <span id="lastUpdate">—</span>
 </footer>
 
@@ -365,17 +313,17 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:8px 
 (function(){
 "use strict";
 
-// ---- State ----
-var stats = {high:0,med:0,low:0,processing:0,total:0,dlq:0};
+var stats    = {high:0,med:0,low:0,processing:0,total:0,dlq:0};
 var counters = {processed:0,failed:0,retries:0,submitted:0};
-var logs = [];
-var dlqJobs = [];
-var workerBusy = {};
-var ws = null;
+var logs     = [];
+var dlqJobs  = [];
+var ws       = null;
 var reconnTimer = null;
-var MAX_LOG = 80;
+var MAX_LOG  = 80;
+var logEventCount = 0;
+var fsChartInst = null;
 
-// ---- Workers (5 fixed) ----
+// ---- Workers ----
 function initWorkers(){
   var g = document.getElementById('workersGrid');
   g.innerHTML = '';
@@ -389,34 +337,27 @@ function initWorkers(){
 }
 initWorkers();
 
-function setWorker(id, busy){
-  var c = document.getElementById('w'+id);
-  var s = document.getElementById('ws'+id);
+function setWorker(id,busy){
+  var c=document.getElementById('w'+id), s=document.getElementById('ws'+id);
   if(!c||!s) return;
-  if(busy){ c.classList.add('busy'); s.className='worker-status ws-busy'; s.textContent='busy'; }
-  else { c.classList.remove('busy'); s.className='worker-status ws-idle'; s.textContent='idle'; }
+  if(busy){c.classList.add('busy');s.className='worker-status ws-busy';s.textContent='busy';}
+  else{c.classList.remove('busy');s.className='worker-status ws-idle';s.textContent='idle';}
 }
 
 // ---- Chart ----
-var ctx = document.getElementById('depthChart').getContext('2d');
+var ctx   = document.getElementById('depthChart').getContext('2d');
 var chart = new Chart(ctx,{
   type:'line',
-  data:{
-    labels:[],
-    datasets:[
-      {label:'High',data:[],borderColor:'#8b83e8',backgroundColor:'rgba(139,131,232,.08)',borderWidth:2,pointRadius:0,tension:.35,fill:true},
-      {label:'Med', data:[],borderColor:'#4a8fe0',backgroundColor:'rgba(74,143,224,.06)',borderWidth:2,pointRadius:0,tension:.35,fill:true},
-      {label:'Low', data:[],borderColor:'#f0a132',backgroundColor:'rgba(240,161,50,.06)',borderWidth:2,pointRadius:0,tension:.35,fill:true},
-      {label:'Proc',data:[],borderColor:'#1faa7e',backgroundColor:'rgba(31,170,126,.06)',borderWidth:1,pointRadius:0,tension:.35,fill:false,borderDash:[4,3]},
-    ]
-  },
+  data:{labels:[],datasets:[
+    {label:'High',data:[],borderColor:'#8b83e8',backgroundColor:'rgba(139,131,232,.08)',borderWidth:2,pointRadius:0,tension:.35,fill:true},
+    {label:'Med', data:[],borderColor:'#4a8fe0',backgroundColor:'rgba(74,143,224,.06)', borderWidth:2,pointRadius:0,tension:.35,fill:true},
+    {label:'Low', data:[],borderColor:'#f0a132',backgroundColor:'rgba(240,161,50,.06)', borderWidth:2,pointRadius:0,tension:.35,fill:true},
+    {label:'Proc',data:[],borderColor:'#1faa7e',backgroundColor:'rgba(31,170,126,.06)', borderWidth:1,pointRadius:0,tension:.35,fill:false,borderDash:[4,3]},
+  ]},
   options:{
     responsive:true,maintainAspectRatio:false,animation:{duration:200},
     interaction:{mode:'index',intersect:false},
-    plugins:{
-      legend:{display:false},
-      tooltip:{backgroundColor:'#181817',borderColor:'#252523',borderWidth:1,titleColor:'#e8e8e4',bodyColor:'#6b6b66',padding:10,cornerRadius:6}
-    },
+    plugins:{legend:{display:false},tooltip:{backgroundColor:'#181817',borderColor:'#252523',borderWidth:1,titleColor:'#e8e8e4',bodyColor:'#6b6b66',padding:10,cornerRadius:6}},
     scales:{
       x:{grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b6b66',maxRotation:0,maxTicksLimit:6,font:{family:'monospace',size:10}}},
       y:{beginAtZero:true,grid:{color:'rgba(255,255,255,.03)'},ticks:{color:'#6b6b66',precision:0,font:{family:'monospace',size:10}}}
@@ -425,73 +366,65 @@ var chart = new Chart(ctx,{
 });
 
 function pushChart(){
-  var t = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-  var d = chart.data;
+  var t=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var d=chart.data;
   d.labels.push(t);
   d.datasets[0].data.push(stats.high);
   d.datasets[1].data.push(stats.med);
   d.datasets[2].data.push(stats.low);
   d.datasets[3].data.push(stats.processing);
-  if(d.labels.length>40){d.labels.shift();d.datasets.forEach(function(ds){ds.data.shift();})}
+  if(d.labels.length>40){d.labels.shift();d.datasets.forEach(function(ds){ds.data.shift();});}
   chart.update('none');
 }
 
-// ---- Render stats ----
+// ---- Stats ----
 function renderStats(){
-  document.getElementById('p-total').textContent    = fmt(counters.submitted||stats.total);
-  document.getElementById('p-low').textContent      = fmt(stats.low);
-  document.getElementById('p-med').textContent      = fmt(stats.med);
-  document.getElementById('p-high').textContent     = fmt(stats.high);
-  document.getElementById('p-proc').textContent     = fmt(stats.processing);
-  document.getElementById('o-done').textContent     = fmt(counters.processed);
-  document.getElementById('o-retry').textContent    = fmt(counters.retries);
-  document.getElementById('o-dead').textContent     = fmt(counters.failed);
-
+  document.getElementById('p-total').textContent = fmt(counters.submitted||stats.total);
+  document.getElementById('p-low').textContent   = fmt(stats.low);
+  document.getElementById('p-med').textContent   = fmt(stats.med);
+  document.getElementById('p-high').textContent  = fmt(stats.high);
+  document.getElementById('p-proc').textContent  = fmt(stats.processing);
+  document.getElementById('o-done').textContent  = fmt(counters.processed);
+  document.getElementById('o-retry').textContent = fmt(counters.retries);
+  document.getElementById('o-dead').textContent  = fmt(counters.failed);
   document.getElementById('m-processed').textContent = fmt(counters.processed);
   document.getElementById('m-failed').textContent    = fmt(counters.failed);
   document.getElementById('m-retries').textContent   = fmt(counters.retries);
   document.getElementById('m-queue').textContent     = fmt(stats.total);
   document.getElementById('m-submitted').textContent = fmt(counters.submitted);
-
-  var total = counters.processed + counters.failed;
-  var rate = total > 0 ? Math.round((counters.processed/total)*1000)/10 : null;
-  document.getElementById('m-rate').textContent = rate !== null ? rate+'%' : '—';
-  document.getElementById('rate-fill').style.width = (rate||0)+'%';
+  var total=counters.processed+counters.failed;
+  var rate=total>0?Math.round((counters.processed/total)*1000)/10:null;
+  document.getElementById('m-rate').textContent = rate!==null?rate+'%':'—';
+  document.getElementById('rate-fill').style.width=(rate||0)+'%';
 }
-
 function fmt(n){return Number(n||0).toLocaleString();}
 
-// ---- Activity log ----
-var logEventCount = 0;
-function addLog(type, msg){
+// ---- Log ----
+var badgeMap={completed:'lb-completed',started:'lb-started',retrying:'lb-retrying',failed:'lb-failed',enqueued:'lb-enqueued'};
+function addLog(type,msg){
   logEventCount++;
-  var time = new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   logs.unshift({type:type,msg:msg,time:time});
   if(logs.length>MAX_LOG) logs.pop();
   renderLog();
-  document.getElementById('log-count').textContent = logEventCount+' events';
+  document.getElementById('log-count').textContent=logEventCount+' events';
 }
-
-var badgeMap={completed:'lb-completed',started:'lb-started',retrying:'lb-retrying',failed:'lb-failed',enqueued:'lb-enqueued'};
 function renderLog(){
-  var box = document.getElementById('logBox');
-  if(!logs.length){ box.innerHTML='<div class="log-empty">No activity yet — submit a job to start</div>'; return; }
-  box.innerHTML = logs.map(function(l){
-    var cls = badgeMap[l.type]||'lb-started';
+  var box=document.getElementById('logBox');
+  if(!logs.length){box.innerHTML='<div class="log-empty">No activity yet — submit a job to start</div>';return;}
+  box.innerHTML=logs.map(function(l){
+    var cls=badgeMap[l.type]||'lb-started';
     return '<div class="log-row"><span class="log-time">'+l.time+'</span><span class="log-badge '+cls+'">'+l.type+'</span><span class="log-msg">'+l.msg+'</span></div>';
   }).join('');
 }
 
 // ---- DLQ ----
 function renderDLQ(){
-  var tbody = document.getElementById('dlqBody');
-  document.getElementById('dlq-count').textContent = dlqJobs.length+' dead';
-  if(!dlqJobs.length){
-    tbody.innerHTML='<tr><td colspan="6" class="dlq-empty">No dead jobs — your queue is healthy ✓</td></tr>';
-    return;
-  }
-  tbody.innerHTML = dlqJobs.map(function(j){
-    var t = j.updated_at ? new Date(j.updated_at).toLocaleTimeString() : '—';
+  var tbody=document.getElementById('dlqBody');
+  document.getElementById('dlq-count').textContent=dlqJobs.length+' dead';
+  if(!dlqJobs.length){tbody.innerHTML='<tr><td colspan="6" class="dlq-empty">No dead jobs — your queue is healthy ✓</td></tr>';return;}
+  tbody.innerHTML=dlqJobs.map(function(j){
+    var t=j.updated_at?new Date(j.updated_at).toLocaleTimeString():'—';
     return '<tr>'+
       '<td class="dlq-id" title="'+j.id+'" onclick="replayJob(\''+j.id+'\')">'+j.id.slice(0,18)+'…</td>'+
       '<td>'+j.type+'</td>'+
@@ -502,163 +435,123 @@ function renderDLQ(){
       '</tr>';
   }).join('');
 }
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-window.replayJob = function(id){
+window.replayJob=function(id){
   fetch('/api/dlq/'+id+'/replay',{method:'POST'})
     .then(function(r){return r.json();})
-    .then(function(){ addLog('started','Replayed job '+id.slice(0,12)+'…'); fetchDLQ(); })
-    .catch(function(e){ addLog('failed','Replay failed: '+e.message); });
+    .then(function(){addLog('started','Replayed job '+id.slice(0,12)+'…');fetchDLQ();})
+    .catch(function(e){addLog('failed','Replay failed: '+e.message);});
 };
-
 function fetchDLQ(){
   fetch('/api/dlq').then(function(r){return r.json();}).then(function(data){
-    dlqJobs = Array.isArray(data) ? data : [];
-    counters.failed = dlqJobs.length;
-    renderDLQ();
-    renderStats();
+    dlqJobs=Array.isArray(data)?data:[];
+    counters.failed=dlqJobs.length;
+    renderDLQ();renderStats();
   }).catch(function(){});
 }
 
-// ---- Submit job ----
-window.submitJob = function(){
-  var type     = document.getElementById('f-type').value;
-  var priority = parseInt(document.getElementById('f-priority').value)||2;
-  var maxRetries = parseInt(document.getElementById('f-retries').value)||3;
-  doSubmit(type, priority, maxRetries);
+// ---- Submit ----
+window.submitJob=function(){
+  var type=document.getElementById('f-type').value;
+  var priority=parseInt(document.getElementById('f-priority').value)||2;
+  var maxRetries=parseInt(document.getElementById('f-retries').value)||3;
+  doSubmit(type,priority,maxRetries);
 };
-
-function doSubmit(type, priority, maxRetries){
-  counters.submitted++;
-  renderStats();
-  fetch('/api/jobs',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({type:type, payload:{demo:true}, priority:priority, maxRetries:maxRetries})
-  })
-  .then(function(r){return r.json();})
-  .then(function(d){ addLog('enqueued', type+' job enqueued → '+d.id.slice(0,12)+'…'); })
-  .catch(function(e){ addLog('failed','Submit error: '+e.message); });
+function doSubmit(type,priority,maxRetries){
+  counters.submitted++;renderStats();
+  fetch('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({type:type,payload:{demo:true},priority:priority,maxRetries:maxRetries})})
+    .then(function(r){return r.json();})
+    .then(function(d){addLog('enqueued',type+' job enqueued → '+d.id.slice(0,12)+'…');})
+    .catch(function(e){addLog('failed','Submit error: '+e.message);});
 }
-
-window.batchSubmit = function(n){
-  addLog('enqueued', 'Sending '+n+' jobs...');
+window.batchSubmit=function(n){addLog('enqueued','Sending '+n+' jobs...');sendBatch(n);};
+window.customBatch=function(){
+  var n=parseInt(document.getElementById('custom-count').value);
+  if(!n||n<1) return;
+  document.getElementById('custom-count').value='';
+  addLog('enqueued','Sending '+n+' jobs...');
   sendBatch(n);
 };
-
-// ---- WebSocket ----
-function setConnectionUI(state){
-  var pill = document.getElementById('livePill');
-  var dot  = document.getElementById('liveDot');
-  var txt  = document.getElementById('liveText');
-  pill.className = 'live-pill '+state;
-  if(state==='connected'){ dot.className='pulse'; txt.textContent='Live'; }
-  else if(state==='connecting'){ dot.className='pulse anim'; txt.textContent='Connecting…'; }
-  else { dot.className='pulse'; txt.textContent='Disconnected'; }
-}
-
-function applyMessage(raw){
-  var msg;
-  try{ msg=JSON.parse(raw); }catch(e){ return; }
-
-  // flat stats from server: {high,med,low,processing,total,dlq,ts}
-  ['high','med','low','processing','total','dlq'].forEach(function(k){
-    if(typeof msg[k]==='number') stats[k]=msg[k];
-  });
-
-  // job completion event
-  if(msg.job){
-    var j = msg.job;
-    if(j.status==='completed'){
-      counters.processed++;
-      var wid = Math.floor(Math.random()*5);
-      setWorker(wid, true);
-      setTimeout(function(){ setWorker(wid,false); }, 400);
-      addLog('completed', j.type+' completed — '+j.id.slice(0,12)+'…');
-    } else if(j.status==='retrying'){
-      counters.retries++;
-      addLog('retrying', j.type+' retrying — attempt '+j.attempts);
-    } else if(j.status==='dead'){
-      counters.failed++;
-      addLog('failed', j.type+' moved to DLQ — '+j.id.slice(0,12)+'…');
-      fetchDLQ();
-    }
-  }
-
-  // enqueue event
-  if(msg.enqueued){
-    addLog('enqueued', msg.enqueued.type+' queued → priority '+msg.enqueued.priority);
-  }
-
-  renderStats();
-  pushChart();
-  document.getElementById('lastUpdate').textContent = 'last update: '+new Date().toLocaleTimeString();
-}
-
-function connect(){
-  setConnectionUI('connecting');
-  try{ ws = new WebSocket('ws://'+location.host); }
-  catch(e){ onClose(); return; }
-  ws.onopen  = function(){ setConnectionUI('connected'); };
-  ws.onmessage = function(ev){ applyMessage(ev.data); };
-  ws.onerror = function(){};
-  ws.onclose = onClose;
-}
-
-function onClose(){
-  setConnectionUI('disconnected');
-  if(reconnTimer) clearTimeout(reconnTimer);
-  reconnTimer = setTimeout(connect, 4000);
-}
-
-// ---- Poll DLQ every 5s ----
-fetchDLQ();
-setInterval(fetchDLQ, 5000);
-
-// ---- Custom batch ----
-window.customBatch = function(){
-  var n = parseInt(document.getElementById('custom-count').value);
-  if(!n || n < 1) return;
-  document.getElementById('custom-count').value = '';
-  addLog('enqueued', 'Sending '+n+' jobs...');
-  sendBatch(n);
-};
-
 function sendBatch(n){
-  var types = ['email','resize','report'];
+  var types=['email','resize','report'];
   for(var i=0;i<n;i++){
     (function(idx){
-      setTimeout(function(){
-        var type = types[idx%3];
-        var pri  = [3,2,1][idx%3];
-        doSubmit(type, pri, 3);
-      }, idx*50);
+      setTimeout(function(){doSubmit(types[idx%3],[3,2,1][idx%3],3);},idx*50);
     })(i);
   }
 }
 
+// ---- WebSocket — KEY FIX: use wss:// on https ----
+function connect(){
+  setConnectionUI('connecting');
+  var protocol = location.protocol==='https:' ? 'wss:' : 'ws:';
+  var wsUrl    = protocol+'//'+location.host;
+  document.getElementById('wsUrl').textContent = wsUrl;
+  try{ ws=new WebSocket(wsUrl); }
+  catch(e){ onClose(); return; }
+  ws.onopen   = function(){ setConnectionUI('connected'); };
+  ws.onmessage= function(ev){ applyMessage(ev.data); };
+  ws.onerror  = function(){};
+  ws.onclose  = onClose;
+}
+function onClose(){
+  setConnectionUI('disconnected');
+  if(reconnTimer) clearTimeout(reconnTimer);
+  reconnTimer=setTimeout(connect,4000);
+}
+function setConnectionUI(state){
+  var pill=document.getElementById('livePill');
+  var dot =document.getElementById('liveDot');
+  var txt =document.getElementById('liveText');
+  pill.className='live-pill '+state;
+  if(state==='connected'){dot.className='pulse';txt.textContent='Live';}
+  else if(state==='connecting'){dot.className='pulse anim';txt.textContent='Connecting…';}
+  else{dot.className='pulse';txt.textContent='Disconnected';}
+}
+function applyMessage(raw){
+  var msg;try{msg=JSON.parse(raw);}catch(e){return;}
+  ['high','med','low','processing','total','dlq'].forEach(function(k){
+    if(typeof msg[k]==='number') stats[k]=msg[k];
+  });
+  if(msg.job){
+    var j=msg.job;
+    if(j.status==='completed'){
+      counters.processed++;
+      var wid=Math.floor(Math.random()*5);
+      setWorker(wid,true);
+      setTimeout(function(){setWorker(wid,false);},400);
+      addLog('completed',j.type+' completed — '+j.id.slice(0,12)+'…');
+    } else if(j.status==='retrying'){
+      counters.retries++;
+      addLog('retrying',j.type+' retrying — attempt '+j.attempts);
+    } else if(j.status==='dead'){
+      counters.failed++;
+      addLog('failed',j.type+' moved to DLQ — '+j.id.slice(0,12)+'…');
+      fetchDLQ();
+    }
+  }
+  if(msg.enqueued) addLog('enqueued',msg.enqueued.type+' queued → priority '+msg.enqueued.priority);
+  renderStats();pushChart();
+  document.getElementById('lastUpdate').textContent='last update: '+new Date().toLocaleTimeString();
+}
+
 // ---- Fullscreen ----
-var fsChartInst = null;
-
-function openSection(sectionId, canvasId, srcChart, title){
-  var overlay = document.getElementById('fsOverlay');
-  document.getElementById('fsTitle').textContent = title;
-  var content = document.getElementById('fsContent');
-  content.innerHTML = '<canvas id="fsCanvas" style="width:100%;flex:1"></canvas>';
-  overlay.style.display = 'flex';
-
-  var fctx = document.getElementById('fsCanvas').getContext('2d');
-  if(fsChartInst){ fsChartInst.destroy(); fsChartInst=null; }
-  var src = srcChart.data;
-  fsChartInst = new Chart(fctx,{
+function openSection(title){
+  var overlay=document.getElementById('fsOverlay');
+  document.getElementById('fsTitle').textContent=title;
+  var content=document.getElementById('fsContent');
+  content.innerHTML='<canvas id="fsCanvas" style="width:100%;flex:1"></canvas>';
+  overlay.style.display='flex';
+  var fctx=document.getElementById('fsCanvas').getContext('2d');
+  if(fsChartInst){fsChartInst.destroy();fsChartInst=null;}
+  var src=chart.data;
+  fsChartInst=new Chart(fctx,{
     type:'line',
-    data:{
-      labels: src.labels.slice(),
-      datasets: src.datasets.map(function(d){
-        return Object.assign({},d,{data:d.data.slice(),fill:false,borderWidth:2,pointRadius:2,pointHoverRadius:5});
-      })
-    },
+    data:{labels:src.labels.slice(),datasets:src.datasets.map(function(d){
+      return Object.assign({},d,{data:d.data.slice(),fill:false,borderWidth:2,pointRadius:2,pointHoverRadius:5});
+    })},
     options:{
       responsive:true,maintainAspectRatio:false,animation:{duration:0},
       interaction:{mode:'index',intersect:false},
@@ -672,51 +565,46 @@ function openSection(sectionId, canvasId, srcChart, title){
       }
     }
   });
-
-  // Keep updating while open
-  overlay._chartInterval = setInterval(function(){
+  overlay._chartInterval=setInterval(function(){
     if(!fsChartInst) return;
-    var s = srcChart.data;
-    fsChartInst.data.labels = s.labels.slice();
-    fsChartInst.data.datasets.forEach(function(d,i){ d.data = s.datasets[i].data.slice(); });
+    var s=chart.data;
+    fsChartInst.data.labels=s.labels.slice();
+    fsChartInst.data.datasets.forEach(function(d,i){d.data=s.datasets[i].data.slice();});
     fsChartInst.update('none');
-  }, 2000);
+  },2000);
 }
 
 function openLogFullscreen(){
-  var overlay = document.getElementById('fsOverlay');
-  document.getElementById('fsTitle').textContent = 'Activity Log';
-  var content = document.getElementById('fsContent');
-  // Clone log box
-  content.innerHTML = '<div id="fsLogBox" style="display:flex;flex-direction:column;gap:2px;overflow-y:auto;height:100%"></div>';
-  overlay.style.display = 'flex';
+  var overlay=document.getElementById('fsOverlay');
+  document.getElementById('fsTitle').textContent='Activity Log';
+  var content=document.getElementById('fsContent');
+  content.innerHTML='<div id="fsLogBox" style="display:flex;flex-direction:column;gap:2px;overflow-y:auto;height:100%"></div>';
+  overlay.style.display='flex';
   renderFsLog();
-  overlay._logInterval = setInterval(renderFsLog, 1500);
+  overlay._logInterval=setInterval(renderFsLog,1500);
 }
-
 function renderFsLog(){
-  var box = document.getElementById('fsLogBox');
+  var box=document.getElementById('fsLogBox');
   if(!box) return;
-  var badgeMap={completed:'lb-completed',started:'lb-started',retrying:'lb-retrying',failed:'lb-failed',enqueued:'lb-enqueued'};
-  if(!logs.length){ box.innerHTML='<div class="log-empty">No activity yet</div>'; return; }
-  box.innerHTML = logs.map(function(l){
-    var cls = badgeMap[l.type]||'lb-started';
+  if(!logs.length){box.innerHTML='<div class="log-empty">No activity yet</div>';return;}
+  box.innerHTML=logs.map(function(l){
+    var cls=badgeMap[l.type]||'lb-started';
     return '<div class="log-row" style="font-size:13px;padding:8px 10px"><span class="log-time" style="font-size:12px">'+l.time+'</span><span class="log-badge '+cls+'" style="font-size:11px">'+l.type+'</span><span class="log-msg" style="font-size:12px">'+l.msg+'</span></div>';
   }).join('');
 }
-
 function closeFullscreen(){
-  var overlay = document.getElementById('fsOverlay');
-  overlay.style.display = 'none';
-  if(overlay._chartInterval){ clearInterval(overlay._chartInterval); delete overlay._chartInterval; }
-  if(overlay._logInterval){ clearInterval(overlay._logInterval); delete overlay._logInterval; }
-  if(fsChartInst){ fsChartInst.destroy(); fsChartInst=null; }
-  document.getElementById('fsContent').innerHTML = '';
+  var overlay=document.getElementById('fsOverlay');
+  overlay.style.display='none';
+  if(overlay._chartInterval){clearInterval(overlay._chartInterval);delete overlay._chartInterval;}
+  if(overlay._logInterval){clearInterval(overlay._logInterval);delete overlay._logInterval;}
+  if(fsChartInst){fsChartInst.destroy();fsChartInst=null;}
+  document.getElementById('fsContent').innerHTML='';
 }
-
-document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeFullscreen(); });
+document.addEventListener('keydown',function(e){if(e.key==='Escape') closeFullscreen();});
 
 // ---- Boot ----
+fetchDLQ();
+setInterval(fetchDLQ,5000);
 connect();
 })();
 </script>
