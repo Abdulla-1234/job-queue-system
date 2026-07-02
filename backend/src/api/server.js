@@ -13,7 +13,8 @@ const server = createServer(app);
 const wss    = new WebSocketServer({ server });
 
 app.use(express.json());
-app.use(express.static('../frontend/dashboard'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../../../frontend/dashboard')));
 app.use('/api', routes);
 
 // Broadcast stats every 2s
@@ -63,7 +64,7 @@ async function main() {
   process.on('SIGTERM', () => { pool.stop(); server.close(); });
   process.on('SIGINT',  () => { pool.stop(); server.close(); process.exit(0); });
 
-  server.listen(3000, () => {
+  server.listen(process.env.PORT || 3000, () => {
     console.log('🚀 Server running on http://localhost:3000');
   });
 }

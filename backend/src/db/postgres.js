@@ -1,12 +1,17 @@
 const { Pool } = require('pg');
 
-const pool = new Pool({
-  host:     'localhost',
-  port:     5432,
-  user:     'admin',
-  password: 'password',
-  database: 'jobqueue',
-});
+const pool = process.env.DATABASE_URL
+  ? new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false }
+    })
+  : new Pool({
+      host: 'localhost',
+      port: 5432,
+      user: 'admin',
+      password: 'password',
+      database: 'jobqueue',
+    });
 
 async function init() {
   await pool.query(`
